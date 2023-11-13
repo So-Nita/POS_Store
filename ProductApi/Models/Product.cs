@@ -1,16 +1,14 @@
-﻿namespace ProductApi.Models
+﻿using System.ComponentModel;
+
+namespace ProductAPI.Models
 {
     public class Product
     {
-        public int Id { get; set; }
-        public string Title { get; set; } = null!;
+        public string Id { get; set; } = null!;
+        public string Name { get; set; } = null!;   
         public double Price { get; set; }
-        public string Thumbnail { get; set; } = null!;
-        public int Qty { get; set; }
-        public string Category { get; set; } = null!;
-    }
-    public class ApiResultTest
-    {
-        public List<Product> Products { get; set; } = new();
+        public string Image { get; set; } = null!;
+        public string CategoryId { get; set; } = null!;
+        public Category Category { get; set; } = new ();
     }
 }

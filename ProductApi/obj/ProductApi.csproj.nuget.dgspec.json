@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Project\\WindowForm\\POSDesign\\ProductApi\\ProductApi.csproj": {}
+    "D:\\Project\\WindowForm\\POSDesign\\ProductAPI\\ProductAPI.csproj": {}
   },
   "projects": {
-    "D:\\Project\\WindowForm\\POSDesign\\ProductApi\\ProductApi.csproj": {
+    "D:\\Project\\WindowForm\\POSDesign\\ProductAPI\\ProductAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Project\\WindowForm\\POSDesign\\ProductApi\\ProductApi.csproj",
-        "projectName": "ProductApi",
-        "projectPath": "D:\\Project\\WindowForm\\POSDesign\\ProductApi\\ProductApi.csproj",
+        "projectUniqueName": "D:\\Project\\WindowForm\\POSDesign\\ProductAPI\\ProductAPI.csproj",
+        "projectName": "ProductAPI",
+        "projectPath": "D:\\Project\\WindowForm\\POSDesign\\ProductAPI\\ProductAPI.csproj",
         "packagesPath": "C:\\Users\\back-end.07\\.nuget\\packages\\",
-        "outputPath": "D:\\Project\\WindowForm\\POSDesign\\ProductApi\\obj\\",
+        "outputPath": "D:\\Project\\WindowForm\\POSDesign\\ProductAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\back-end.07\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -41,6 +41,20 @@
           "targetAlias": "net7.0",
           "dependencies": {
             "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[7.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[7.0.13, )"
             },
