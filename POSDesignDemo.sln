@@ -5,6 +5,10 @@ VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "POSDesignDemo", "POSDesignDemo\POSDesignDemo.csproj", "{FE3C3781-DF18-4D50-B809-0B9CB877180E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POSApi", "POSApi\POSApi.csproj", "{AA26FCA7-6481-43DF-B9A5-E77EB18C8890}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POSLibrary", "POSLibrary\POSLibrary.csproj", "{8097BEC9-1D43-47CC-89E7-DBF0BD7817B9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{FE3C3781-DF18-4D50-B809-0B9CB877180E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE3C3781-DF18-4D50-B809-0B9CB877180E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE3C3781-DF18-4D50-B809-0B9CB877180E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA26FCA7-6481-43DF-B9A5-E77EB18C8890}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA26FCA7-6481-43DF-B9A5-E77EB18C8890}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA26FCA7-6481-43DF-B9A5-E77EB18C8890}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA26FCA7-6481-43DF-B9A5-E77EB18C8890}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8097BEC9-1D43-47CC-89E7-DBF0BD7817B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8097BEC9-1D43-47CC-89E7-DBF0BD7817B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8097BEC9-1D43-47CC-89E7-DBF0BD7817B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8097BEC9-1D43-47CC-89E7-DBF0BD7817B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

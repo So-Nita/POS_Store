@@ -1,0 +1,14 @@
+D:\Project\WindowForm\POSDesign\POSLibrary\obj\Debug\net7.0\POSLibrary.csproj.AssemblyReference.cache
+D:\Project\WindowForm\POSDesign\POSLibrary\obj\Debug\net7.0\POSLibrary.GeneratedMSBuildEditorConfig.editorconfig
+D:\Project\WindowForm\POSDesign\POSLibrary\obj\Debug\net7.0\POSLibrary.AssemblyInfoInputs.cache
+D:\Project\WindowForm\POSDesign\POSLibrary\obj\Debug\net7.0\POSLibrary.AssemblyInfo.cs
+D:\Project\WindowForm\POSDesign\POSLibrary\obj\Debug\net7.0\POSLibrary.csproj.CoreCompileInputs.cache
+D:\Project\WindowForm\POSDesign\PosLibrary\bin\Debug\net7.0\POSLibrary.deps.json
+D:\Project\WindowForm\POSDesign\PosLibrary\bin\Debug\net7.0\POSLibrary.runtimeconfig.json
+D:\Project\WindowForm\POSDesign\PosLibrary\bin\Debug\net7.0\POSLibrary.dll
+D:\Project\WindowForm\POSDesign\PosLibrary\bin\Debug\net7.0\POSLibrary.pdb
+D:\Project\WindowForm\POSDesign\PosLibrary\obj\Debug\net7.0\POSLibrary.dll
+D:\Project\WindowForm\POSDesign\PosLibrary\obj\Debug\net7.0\refint\POSLibrary.dll
+D:\Project\WindowForm\POSDesign\PosLibrary\obj\Debug\net7.0\POSLibrary.pdb
+D:\Project\WindowForm\POSDesign\PosLibrary\obj\Debug\net7.0\POSLibrary.genruntimeconfig.cache
+D:\Project\WindowForm\POSDesign\PosLibrary\obj\Debug\net7.0\ref\POSLibrary.dll
