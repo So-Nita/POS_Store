@@ -1,6 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using POSLibrary.DataContexts;
-using POSLibrary.Models;
+﻿using POSLibrary.Models;
 
 namespace POSLibrary.Repository
 {
@@ -11,6 +9,7 @@ namespace POSLibrary.Repository
         {
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
+        public PosContext Context() => _context;
         public IEnumerable<T>? GetAll()
         {
             return _context.Set<T>().AsEnumerable();
@@ -19,7 +18,7 @@ namespace POSLibrary.Repository
         {
             return _context.Set<T>().AsQueryable();
         }
-        public T? GetById(string id)
+        public T? GetById(ulong id)
         {
             return _context.Set<T>().Find(id);
         }
@@ -32,9 +31,17 @@ namespace POSLibrary.Repository
         {
             _context.Set<T>().AddRange(entities);
         }
-        public void Update(T entity)
+        public bool Update(T entity)
         {
-            _context.Set<T>().Update(entity);
+            try
+            {
+                _context.Set<T>().Update(entity);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
         public void Delete(T entity)
         {

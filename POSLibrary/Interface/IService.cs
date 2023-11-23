@@ -1,13 +1,18 @@
-﻿
+﻿using POSLibrary.DataModels;
+using POSLibrary.DataModels.Product;
+using POSLibrary.DataModels.Results;
+
 namespace POSLibrary.Interface
 {
     public interface IService<TR,TC,TU> where TR : class
                                         where TC : class
                                         where TU : class
     {
-        List<TR> ReadAll();
-        string Create(TC c);
-        bool Update(TR t);
-        bool Delete(string t);
+        //IEnumerable<TR> ReadAll();
+        Results<IEnumerable<TR?>> ReadAll();
+        Results<TR> GetById(ulong id);
+        Results<string> Create(TC req);
+        Results<string> Update(TU req);
+        Results<bool> Delete(string id);
     }
 }

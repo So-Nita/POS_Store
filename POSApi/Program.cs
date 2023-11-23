@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using POSLibrary.DataContexts;
 using POSLibrary.Interface;
+using POSLibrary.Interface.Category;
 using POSLibrary.Interface.Product;
 using POSLibrary.Models;
 using POSLibrary.Repository;
@@ -23,7 +24,9 @@ builder.Services.AddDbContext<PosContext>(opt =>
 }, ServiceLifetime.Transient);
 
 builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<ICategoryService, CategoryService>();    
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+//builder.Services.AddScoped<IRepository<ProductByCategory>, Repository<ProductByCategory>>();  
 
 var app = builder.Build();
 

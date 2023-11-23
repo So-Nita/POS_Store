@@ -1,4 +1,6 @@
-﻿namespace POSLibrary.Repository
+﻿using POSLibrary.Models;
+
+namespace POSLibrary.Repository
 {
     public interface IRepository<T> where T : class
     {
@@ -8,8 +10,9 @@
         void Add(T entity);
         void AddRange(IEnumerable<T> entities);
         void Delete(T entity);
-        T? GetById(string id);
+        T? GetById(ulong id);
         void SaveChanges();
-        void Update(T entity);
+        bool Update(T entity);
+        PosContext Context();
     }
 }
