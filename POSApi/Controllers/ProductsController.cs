@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using POSLibrary.Constant;
 using POSLibrary.DataModels;
 using POSLibrary.DataModels.Product;
 using POSLibrary.DataModels.Results;
@@ -71,13 +72,16 @@ namespace POSApi.Controllers
         {
             try
             {
-                var data = _service.Delete(id.ToString()!);
-                var result = Results<IEnumerable<string>>.Success(new List<string>() { "Delete Successfully"});
-                return Ok(result);
+                var data = _service.Delete(id);
+                if (data.Status != (int)ResponseStatusType.Success)
+                {
+                    return BadRequest(data);
+                }
+                return Ok(data);
             }
-            catch
+            catch(Exception ex)
             {
-                return BadRequest(Results<IEnumerable<string>>.Fail(new List<string>() { "Fail to delete."}));
+                return BadRequest(Results<IEnumerable<string>>.Fail(new List<string>() { ex.Message}));
             }
         }
         [HttpGet("getById")]
@@ -85,15 +89,16 @@ namespace POSApi.Controllers
         {
             try
             {
-                if(id == null) {
-                    return BadRequest(Results<IEnumerable<string>>.Fail(new List<string>() { "Id is required." }));
-                }
                 var data = _service.GetById(id);
+                if(data.Status != (int)ResponseStatusType.Success)
+                {
+                    return BadRequest(data);
+                }
                 return Ok(data);
             }
-            catch
+            catch(Exception ex)  
             {
-                return BadRequest(Results<IEnumerable<string>>.Fail(new List<string>() { "Fail to delete." }));
+                return BadRequest(Results<IEnumerable<string>>.Fail(new List<string>() {ex.Message }));
             }
         }
     }

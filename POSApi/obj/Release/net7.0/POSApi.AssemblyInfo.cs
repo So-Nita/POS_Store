@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("POSApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ef0eb64a2f99f898d5ba7666c8f49772e8c780ab")]
 [assembly: System.Reflection.AssemblyProductAttribute("POSApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("POSApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

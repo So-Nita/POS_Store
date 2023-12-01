@@ -3,6 +3,7 @@ using POSLibrary.DataContexts;
 using POSLibrary.Interface;
 using POSLibrary.Interface.Category;
 using POSLibrary.Interface.Product;
+using POSLibrary.Interface.SellOrder;
 using POSLibrary.Models;
 using POSLibrary.Repository;
 using POSLibrary.Service;
@@ -24,7 +25,10 @@ builder.Services.AddDbContext<PosContext>(opt =>
 }, ServiceLifetime.Transient);
 
 builder.Services.AddScoped<IProductService, ProductService>();
-builder.Services.AddScoped<ICategoryService, CategoryService>();    
+builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<ISellOrderService, SellOrderService>();
+builder.Services.AddScoped<ISupplierService, SupplierService>();
+
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 //builder.Services.AddScoped<IRepository<ProductByCategory>, Repository<ProductByCategory>>();  
 

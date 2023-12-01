@@ -13,6 +13,6 @@ namespace POSLibrary.Interface
         Results<TR> GetById(ulong id);
         Results<string> Create(TC req);
         Results<string> Update(TU req);
-        Results<bool> Delete(string id);
+        Results<string> Delete(ulong id);
     }
 }

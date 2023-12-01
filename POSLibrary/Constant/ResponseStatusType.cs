@@ -8,8 +8,10 @@ namespace POSLibrary.Constant
 {
     public enum ResponseStatusType
     {
-        success = 200,
-        fail = 500
+        Success = 200,
+        NotFound = 404,
+        Conflict = 409,
+        Fail = 500,
     }
     public class Response
     {

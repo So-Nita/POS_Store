@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Project\\WindowForm\\POSDesign\\POSLibrary\\POSLibrary.csproj": {}
+    "D:\\Work\\POSDesign\\POSLibrary\\POSLibrary.csproj": {}
   },
   "projects": {
-    "D:\\Project\\WindowForm\\POSDesign\\POSLibrary\\POSLibrary.csproj": {
+    "D:\\Work\\POSDesign\\POSLibrary\\POSLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Project\\WindowForm\\POSDesign\\POSLibrary\\POSLibrary.csproj",
+        "projectUniqueName": "D:\\Work\\POSDesign\\POSLibrary\\POSLibrary.csproj",
         "projectName": "POSLibrary",
-        "projectPath": "D:\\Project\\WindowForm\\POSDesign\\POSLibrary\\POSLibrary.csproj",
-        "packagesPath": "C:\\Users\\back-end.07\\.nuget\\packages\\",
-        "outputPath": "D:\\Project\\WindowForm\\POSDesign\\POSLibrary\\obj\\",
+        "projectPath": "D:\\Work\\POSDesign\\POSLibrary\\POSLibrary.csproj",
+        "packagesPath": "C:\\Users\\Back-End.07\\.nuget\\packages\\",
+        "outputPath": "D:\\Work\\POSDesign\\POSLibrary\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\back-end.07\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Back-End.07\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -77,7 +77,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

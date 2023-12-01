@@ -1503,19 +1503,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\back-end.07\\.nuget\\packages\\": {}
+    "C:\\Users\\Back-End.07\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Project\\WindowForm\\POSDesign\\POSApi\\POSApi.csproj",
+      "projectUniqueName": "D:\\Work\\POSDesign\\POSApi\\POSApi.csproj",
       "projectName": "POSApi",
-      "projectPath": "D:\\Project\\WindowForm\\POSDesign\\POSApi\\POSApi.csproj",
-      "packagesPath": "C:\\Users\\back-end.07\\.nuget\\packages\\",
-      "outputPath": "D:\\Project\\WindowForm\\POSDesign\\POSApi\\obj\\",
+      "projectPath": "D:\\Work\\POSDesign\\POSApi\\POSApi.csproj",
+      "packagesPath": "C:\\Users\\Back-End.07\\.nuget\\packages\\",
+      "outputPath": "D:\\Work\\POSDesign\\POSApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\back-end.07\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Back-End.07\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1529,8 +1529,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "D:\\Project\\WindowForm\\POSDesign\\POSLibrary\\POSLibrary.csproj": {
-              "projectPath": "D:\\Project\\WindowForm\\POSDesign\\POSLibrary\\POSLibrary.csproj"
+            "D:\\Work\\POSDesign\\POSLibrary\\POSLibrary.csproj": {
+              "projectPath": "D:\\Work\\POSDesign\\POSLibrary\\POSLibrary.csproj"
             }
           }
         }
@@ -1593,7 +1593,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

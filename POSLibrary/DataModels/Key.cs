@@ -9,7 +9,6 @@ namespace POSLibrary.DataModels
     public class Key<T>
     {
         public T? Id { get; set; }
-        //public string? Code { get; set; }
     }
     
 }

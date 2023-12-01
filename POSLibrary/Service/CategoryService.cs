@@ -43,7 +43,7 @@ namespace POSLibrary.Service
                     Parent_category_id = e.ParentCategoryId,
                     Image = e.Image,
                     Shop_id = e.ShopId
-                });
+                }).OrderBy(e=>e.Name).DistinctBy(e=>e.Id);
                 return Results<IEnumerable<CategoryResponse>>.Success(data,data.Count());
             }catch 
             { 
@@ -84,40 +84,89 @@ namespace POSLibrary.Service
                 };
                 return Results<CategoryResponse>.Success(data);
             }
-            catch { return Results<CategoryResponse>.Fail(); }
+            catch(ArgumentException ex) { return Results<CategoryResponse>.Fail(); }
         }
 
-        public Results<string> Create(CategoryCreateReq c)
+        public Results<string> Create(CategoryCreateReq req)
         {
             try
             {
-                return Results<string>.Success( );
+                var validationErrors = DataValidator<CategoryCreateReq>.ValidateDynamicTypes(req);
+                if (validationErrors.Count > 0)
+                {
+                    return Results<string>.Fail(validationErrors.First() );
+                }
+                var category = new Category()
+                {
+                    Name = req.Name,
+                    Image = req.Image,
+                    ShopId = req.ShopId,
+                    ParentCategoryId = req.ParentCategoryId,
+                    Type = req.Type,
+                    Status = req.Status.ToString(),
+                    CreatedAt = DateTime.Now
+                };
+                
+                _repo.Add(category);
+                _repo.SaveChanges();
+
+                return Results<string>.Success( "Created Successfully.");
             }
             catch
             {
-                return Results<string>.Fail();
+                return Results<string>.Fail("Created Successfully."); 
             }
         }
         public Results<string> Update(CategoryUpdateReq req)
         {
             try
             {
-                return Results<string>.Success();
+                if (req.Id == 0)
+                {
+                    return Results<string>.Fail("Field Id is Required.");
+                }
+                var categoryFound = _repo.GetById(req.Id);
+
+                if (categoryFound == null) 
+                    return Results<string>.NotFound("Category Id does not existing.");
+
+                categoryFound.Name = req.Name ?? categoryFound.Name;
+                categoryFound.Image = req.Image ?? categoryFound.Image;
+                categoryFound.ShopId = (req.ShopId==0 || req.ShopId==null) ? categoryFound.ShopId : req.ShopId;
+                categoryFound.ParentCategoryId = (req.ParentCategoryId != 0) ? req.ParentCategoryId : categoryFound.ParentCategoryId;
+                categoryFound.Type = req.Type ?? categoryFound.Type;
+                categoryFound.Description = req.Description ?? categoryFound.Description;   
+                categoryFound.Status = (req.Status==null || req.Status==0) ? categoryFound.Status : req.Status.ToString();
+                categoryFound.UpdatedAt = DateTime.Now;
+
+                _repo.Update(categoryFound);
+                _repo.SaveChanges();
+
+                return Results<string>.Success("Updated Successfully");
             }
-            catch
+            catch(Exception ex)
             {
-                return Results<string>.Fail();
+                return Results<string>.Fail("Failed to Update.");
             }
         }
-        public Results<bool> Delete(string t)
+        public Results<string> Delete(ulong id)
         {
             try
             {
-                return Results<bool>.Success();
+                if (id.Equals(0)) return Results<string>.Fail("Field Id is Required.");
+
+                var category = _repo.GetById(id);
+
+                if(category==null) return Results<string>.Fail("Category Id does not existing.");
+
+                _repo.Delete(category);
+                _repo.SaveChanges();
+
+                return Results<string>.Success("Deleted Successfully");
             }
             catch
             {
-                return Results<bool>.Fail();
+                return Results<string>.Fail("Failed to Delete.");
             }
         }
 

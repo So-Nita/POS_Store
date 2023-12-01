@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using POSLibrary.Constant;
 using POSLibrary.DataModels.Category;
 using POSLibrary.Interface.Category;
 using POSLibrary.Interface.Product;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace POSApi.Controllers
 {
@@ -14,17 +16,22 @@ namespace POSApi.Controllers
         {
             _service = service;
         }
-        [HttpGet("getAllCategory")]
+
+        [HttpGet]
         public IActionResult GetAll()
         {
             try
             {
-                var categories = _service.GetAllCategory();
-                return Ok(categories);
+                var data = _service.GetAllCategory();
+                if (data.Status != (int)ResponseStatusType.Success)
+                {
+                    return BadRequest(data);
+                }
+                return Ok(data);
             }
-            catch
+            catch (ArgumentException ex)
             {
-                return BadRequest();
+                return BadRequest(ex);
             }
         }
 
@@ -33,25 +40,70 @@ namespace POSApi.Controllers
         {
             try
             {
-                var categories = _service.ReadAll();
-                return Ok(categories);
+                var data = _service.ReadAll();
+                if (data.Status != (int)ResponseStatusType.Success)
+                {
+                    return BadRequest(data);
+                }
+                return Ok(data);
             }
-            catch
+            catch (ArgumentException ex)
             {
-                return BadRequest();
+                return BadRequest(ex);
             }
         }
+
         [HttpPost]
         public IActionResult Post([FromBody] CategoryCreateReq req)
         {
             try
             {
-                var categories = _service.Create(req);
-                return Ok(categories);
+                var data = _service.Create(req);
+                if (data.Status != (int)ResponseStatusType.Success)
+                {
+                    return BadRequest(data);
+                }
+                return Ok(data);
             }
-            catch
+            catch (ArgumentException ex)
             {
-                return BadRequest();
+                return BadRequest(ex);
+            }
+        }
+
+        [HttpPut]
+        public IActionResult Update([FromBody] CategoryUpdateReq req)
+        {
+            try
+            {
+                var data = _service.Update(req);
+                if (data.Status != (int)ResponseStatusType.Success)
+                {
+                    return BadRequest(data);
+                }
+                return Ok(data);
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(ex);
+            }
+        }
+
+        [HttpDelete]
+        public IActionResult Delete(ulong req)
+        {
+            try
+            {
+                var data = _service.Delete(req);
+                if (data.Status != (int)ResponseStatusType.Success)
+                {
+                    return BadRequest(data);
+                }
+                return Ok(data);
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(ex);
             }
         }
     }

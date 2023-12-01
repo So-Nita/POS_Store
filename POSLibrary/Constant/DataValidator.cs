@@ -31,11 +31,12 @@ public class DataValidator<T>
     }
     private static void ValidateString(string propertyName, string value, bool isRequired, List<string> errors)
     {
-        if (isRequired && string.IsNullOrEmpty(value) || value.Trim()=="")
+        if (isRequired && (value == null || string.IsNullOrEmpty(value) || value.Trim() == ""))
         {
             errors.Add($"Property {propertyName} is required.");
         }
     }
+
     private static void ValidateNumber(string propertyName, object value, bool isRequired, List<string> errors)
     {
         if (isRequired && value == null)

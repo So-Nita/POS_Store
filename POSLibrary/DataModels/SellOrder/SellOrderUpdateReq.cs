@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace POSLibrary.DataModels.Order
+namespace POSLibrary.DataModels.SellOrder
 {
-    public class OrderUpdateReq : IUpdateReq
+    public class SellOrderUpdateReq : IUpdateReq
     {
     }
 }

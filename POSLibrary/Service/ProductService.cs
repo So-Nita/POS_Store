@@ -21,21 +21,32 @@ namespace POSLibrary.Service
         {
             try
             {
-                var data = _repo.GetAll()!.Where(e=>e.Qty>0).Select(e => new ProductResponse()
+                var categories = _repo.Context().Categories.ToList();
+                var products = _repo.GetAll()!.Where(e => e.Qty > 0).ToList();
+                var result = new List<ProductResponse>();
+                if (categories != null)
                 {
-                    Id = e.Id.ToString(),
-                    Product_name = e.Name,
-                    Product_namekh = e.NameKh,
-                    Category_id = e.CategoryId,
-                    Price = e.Price,
-                    Brand = e.Brand,
-                    Qty = e.Qty,
-                    Image = e.Image,
-                    Description = e.Description,
-                    ExpirationDate = e.ExpirationDate
-                }).ToList();
-
-                return Results<IEnumerable<ProductResponse>>.Success(data, data!.Count())!;
+                    foreach (var item in categories)
+                    {
+                        var data = products.Where(e=>e.CategoryId.ToString()==item.Id.ToString()).Select(e => new ProductResponse()
+                        {
+                            Id = e.Id.ToString(),
+                            Product_name = e.Name,
+                            Product_namekh = e.NameKh,
+                            Category_id = e.CategoryId,
+                            CategoryName = item.Name,
+                            Price = e.Price,
+                            Brand = e.Brand,
+                            Qty = e.Qty,
+                            Image = e.Image,
+                            Description = e.Description,
+                            ExpirationDate = e.ExpirationDate
+                        }).ToList();
+                        result.AddRange(data);
+                    }
+                }
+                
+                return Results<IEnumerable<ProductResponse>>.Success(result, result!.Count())!;
             }
             catch { throw new Exception(); }
         }
@@ -44,7 +55,7 @@ namespace POSLibrary.Service
         {
             try
             {
-                var data = _repo.GetQueryable()!.Where(e=>e.CategoryId==id).Select(e => new ProductResponse()
+                var data = _repo.GetQueryable()!.Where(e=>e.CategoryId==id && e.Qty>0).Select(e => new ProductResponse()
                 {
                     Id = e.Id.ToString(),
                     Product_name = e.Name,
@@ -66,7 +77,7 @@ namespace POSLibrary.Service
             var validationErrors = DataValidator<ProductCreateReq>.ValidateDynamicTypes(req);
             if (validationErrors.Count > 0)
             {
-                return Results<string>.Fail(data: validationErrors.First().ToString(), total: validationErrors.Count);
+                return Results<string>.Fail(validationErrors.First(), validationErrors.Count);
             }
             var product = new ProductByCategory()
             {
@@ -88,15 +99,23 @@ namespace POSLibrary.Service
                 _repo.SaveChanges();
                 return Results<string>.Success(data: "Create Suceessfully. Product id : "+product.Id);
             }
-            catch { return Results<string>.Fail(data: "Failed to create the product"); }
+            catch 
+            { 
+                return Results<string>.Fail("Failed to create the product"); 
+            }
         }
 
         public Results<string> Update(ProductUpdateReq req)
         {
             try
             {
+                var validationErrors = DataValidator<ProductUpdateReq>.ValidateDynamicTypes(req);
+                if (validationErrors.Count > 0)
+                {
+                    return Results<string>.Fail(validationErrors.First(), validationErrors.Count);
+                }
                 var product = _repo.GetQueryable()!.FirstOrDefault(e=>e.Id==req.Id);// !.FirstOrDefault(e => e.Id.Equals(req.Id));
-                if (product == null) { return Results<string>.Fail(data: "Product does not existing."); }
+                if (product == null) { return Results<string>.Fail("Product does not existing."); }
 
                 product.Name = req.Name ?? product.NameKh!;
                 product.NameKh = req.NameKh ?? product.NameKh;
@@ -114,7 +133,7 @@ namespace POSLibrary.Service
             }
             catch
             {
-                return Results<string>.Fail(data: "Fail to Update");
+                return Results<string>.Fail("Fail to Update");
             }
         }
         
@@ -137,15 +156,23 @@ namespace POSLibrary.Service
                 }).First();
                 return Results<ProductResponse>.Success(data);
             }
-            catch { throw new Exception(); }
+            catch(Exception ex)
+            {
+                return Results<ProductResponse>.Fail();
+            }
         }
-        public Results<bool> Delete(string t)
+        public Results<string> Delete(ulong id)
         {
             try
             {
-                return Results<bool>.Success(data: true);
+                var product = _repo.GetById(id);
+                if(product == null)
+                {
+                    return Results<string>.NotFound();
+                }
+                return Results<string>.Success("Deleted Successfully.");
             }
-            catch { return Results<bool>.Fail(data: false); }
+            catch { return Results<string>.Fail("Failed to Delete."); }
         }
 
     }
