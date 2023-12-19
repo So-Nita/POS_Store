@@ -143,7 +143,7 @@ namespace POSLibrary.Service
                 supplier.Email = req.Email ?? supplier.Email;
                 supplier.Website = req.Website ?? supplier.Website;
                
-                var result = _repo.Update(supplier);
+                _repo.Update(supplier);
                 _repo.SaveChanges();
 
                 return Results<string>.Success("Updated Suceessfully.");
