@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using POSDesignDemo.Components;
 using POSDesignDemo.Controllers;
-using POSDesignDemo.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

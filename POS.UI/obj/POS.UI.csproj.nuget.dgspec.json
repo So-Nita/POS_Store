@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Work\\POSDesign\\POSDesignDemo\\POS.UI.csproj": {}
+    "D:\\Work\\POSDesign\\POS.UI\\POS.UI.csproj": {}
   },
   "projects": {
-    "D:\\Work\\POSDesign\\POSDesignDemo\\POS.UI.csproj": {
+    "D:\\Work\\POSDesign\\POS.UI\\POS.UI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Work\\POSDesign\\POSDesignDemo\\POS.UI.csproj",
+        "projectUniqueName": "D:\\Work\\POSDesign\\POS.UI\\POS.UI.csproj",
         "projectName": "POS.UI",
-        "projectPath": "D:\\Work\\POSDesign\\POSDesignDemo\\POS.UI.csproj",
+        "projectPath": "D:\\Work\\POSDesign\\POS.UI\\POS.UI.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\Work\\POSDesign\\POSDesignDemo\\obj\\",
+        "outputPath": "D:\\Work\\POSDesign\\POS.UI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",

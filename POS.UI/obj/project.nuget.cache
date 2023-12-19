@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "uy/1M59zQHNK+ku+ncdYqoir/zBsgAY9LBXkb+NjTBL75GjrZuMR/UINaRTHYptrU81Ovula5KN//HXbitfbWw==",
+  "dgSpecHash": "WdOyBumLc3y1BL6zpxRFSqVYES96pjSkbLy0GeRCde2w9H0ctSnd4c9ye8WR8Q//eRyJ84zkBXG/1BCKf0MfHA==",
   "success": true,
-  "projectFilePath": "D:\\Work\\POSDesign\\POSDesignDemo\\POS.UI.csproj",
+  "projectFilePath": "D:\\Work\\POSDesign\\POS.UI\\POS.UI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User\\.nuget\\packages\\bunifu.licensing\\5.0.0\\bunifu.licensing.5.0.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\bunifu.ui.winforms\\6.1.0\\bunifu.ui.winforms.6.1.0.nupkg.sha512",
